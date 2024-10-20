@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+header {
+  @apply bg-zinc-50;
+}
+
+strong {
+  @apply font-semibold;
+}
+
+// https://rsms.me/inter/#features/ss02
+.disambig {
+  font-feature-settings: "ss02";
+}

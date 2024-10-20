@@ -1,16 +1,67 @@
 ---
+import "@fontsource-variable/inter";
+import "@phosphor-icons/web/fill";
+import "./../styles.scss";
+import Converter from "./../components/Converter.vue";
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<title>Nordea (SE) to YNAB CSV Converter</title>
+
+		<meta name="description" content="Convert Nordea (SE) CSV export files to YNAB CSV format" />
+		<meta property="og:title" content="Nordea (SE) to YNAB CSV Converter" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="Convert Nordea (SE) CSV export files to YNAB CSV format" />
+		<meta property="og:url" content={Astro.request.url} />
+		<!--<meta
+			property="og:image"
+			content="https://dagvakt.se/android-chrome-512x512.png"
+		/> -->
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		{
+			import.meta.env.PROD ? (
+				<script
+					is:inline
+					src="https://cdn.usefathom.com/script.js"
+					// data-site="PPVLQRIB"
+					defer
+				/>
+			) : (
+			<script is:inline>
+					function logger(scope) {
+						return function(...args) {
+							console.info(`[fathom-dev] ${scope}(${args.join(", ")})`)
+						}
+					}
+					window.fathom = {};
+					window.fathom.send = logger('send');
+					window.fathom.trackEvent = logger('trackEvent');
+					window.fathom.trackGoal = logger('trackGoal')
+					window.fathom.trackPageview = logger('trackPageview');
+				</script>
+			)
+		}
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<div class="container py-20">
+			<h1 class=" font-black text-6xl">Nordea (SE) to YNAB CSV Converter</h1>
+			<Converter client:only="vue" />
+		</div>
 	</body>
 </html>

@@ -10,8 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.6",
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.6.3"
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vue": "^4.5.2",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@phosphor-icons/web": "^2.1.1",
+    "astro": "^4.16.6",
+    "papaparse": "^5.4.1",
+    "sass": "^1.80.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.15"
   }
 }
