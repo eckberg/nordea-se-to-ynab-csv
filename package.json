@@ -1,7 +1,7 @@
 {
   "name": "nordea-se-to-ynab-csv",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vue": "^4.5.2",
     "@fontsource-variable/inter": "^5.1.0",
+    "@js-temporal/polyfill": "^0.4.4",
     "@phosphor-icons/web": "^2.1.1",
     "astro": "^4.16.6",
     "papaparse": "^5.4.1",

@@ -38,7 +38,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				<script
 					is:inline
 					src="https://cdn.usefathom.com/script.js"
-					// data-site="PPVLQRIB"
+					data-site="TIVLOFJZ"
 					defer
 				/>
 			) : (
@@ -59,9 +59,54 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	</head>
 
 	<body>
-		<div class="container py-20">
-			<h1 class=" font-black text-6xl">Nordea (SE) to YNAB CSV Converter</h1>
-			<Converter client:only="vue" />
+		<div class="container py-20 space-y-10">
+			<h1 class="text-nordea font-black text-4xl lg:text-6xl">Nordea (SE) to YNAB CSV Converter</h1>
+
+			<div>
+				<Converter client:only="vue" />
+			</div>
+
+			<hr />
+
+			<div class="space-y-2">
+				<h2><i class="ph-fill ph-info" /> About</h2>
+				<p>
+					This is an <a href="https://github.com/eckberg/nordea-se-to-ynab-csv" class="lnk">open-source project</a> created for <a href="https://nordea.se" class="lnk">Swedish Nordea customers</a> who want to convert transaction data into a format compatible with <a href="https://ynab.com" class="lnk">YNAB</a>.
+				</p>
+				<p>The service converts your Nordea CSV file to YNAB format, applying the following additional logic:</p>
+				<ul class="space-y-2">
+					<li>The converter expects Swedish-style numbers, using commas as decimal separators, which are internationalized during conversion.</li>
+					<li>Rows without a valid date in the date field are ignored (typically for "reserved" amounts).</li>
+					<li>Certain prefixes in the transaction description are parsed to better match the YNAB format. For example, "Kortköp 241021 Acme Ltd" is processed so that "Kortköp 241021" moves to the Memo field and "Acme Ltd" moves to the Payee field.</li>
+				</ul>
+				<p>The project is not affiliated with Nordea and is provided on an "as-is" basis.</p>
+			</div>
+
+			<div class="space-y-2">
+				<h2><i class="ph-fill ph-git-pull-request" />	Issues</h2>
+				<p>
+					Feel free to suggest changes or report issues on the project page on <a href="https://github.com/eckberg/nordea-se-to-ynab-csv" class="lnk">
+						GitHub
+					</a>.
+				</p>
+			</div>
+
+			<div class="space-y-2">
+				<h2><i class="ph-fill ph-cookie" />	Data &amp; Integrity</h2>
+				<p>
+					All data processing happens directly on your device, meaning your data never leaves your browser, and we do not store or share it. We don’t use cookies, but we do use <a href="https://usefathom.com/ref/DIHZEN" class="lnk">Fathom Analytics</a> to understand how the site is used, which may collect some anonymized data. Your privacy is important to us, and we’ve ensured that any personal data handled complies with privacy standards.
+				</p>
+			</div>
+
+			<hr />
+
+			<div class="text-sm inline-flex gap-x-5">
+				<p>v. {import.meta.env.APP_VERSION}</p>
+				<a href="https://github.com/eckberg/nordea-se-to-ynab-csv" class="inline-flex justify-center items-center gap-x-1">
+					<i class="ph-fill ph-github-logo" />
+					eckberg/nordea-se-to-ynab-csv
+				</a>
+			</div>
 		</div>
 	</body>
 </html>

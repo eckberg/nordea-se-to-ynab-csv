@@ -11,7 +11,69 @@ strong {
   @apply font-semibold;
 }
 
-// https://rsms.me/inter/#features/ss02
-.disambig {
-  font-feature-settings: "ss02";
+@layer utilities {
+  .lnk-hover {
+    @apply underline underline-offset-[0.2em] decoration-gray-800/50 transition;
+  }
+
+  .lnk-alt-hover {
+    @apply underline underline-offset-[0.2em] decoration-gray-800/50 transition;
+  }
+}
+
+.lnk,
+article
+  a:not(.nlnk):not([data-footnote-ref]):not([data-footnote-backref]):not(
+    .lnk-alt
+  ) {
+  @apply underline underline-offset-[0.2em] decoration-gray-800/10 hover:lnk-hover transition;
+}
+
+
+.btn {
+  @apply py-1.5 px-2 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-sm border border-zinc-200 bg-white text-zinc-800 shadow-sm hover:bg-zinc-50 disabled:opacity-50 disabled:pointer-events-none;
+
+  &--nordea {
+    @apply border-transparent bg-nordea/75 text-white hover:bg-nordea disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  &--big {
+    @apply py-2 px-4 text-lg;
+  }
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+h2 {
+  @apply font-black text-2xl inline-flex justify-center items-center gap-x-2;
+}
+
+hr {
+  @apply bg-nordea h-1 rounded-full opacity-50;
+}
+
+table {
+ @apply table-auto text-xs w-full;
+
+ td, th {
+  @apply border p-1;
+ }
+
+ thead th {
+  @apply font-bold bg-zinc-100;
+ }
+}
+
+ol, ul {
+  @apply ml-8;
+}
+
+ol li {
+  @apply list-decimal;
+}
+
+ul li {
+  @apply list-disc;
 }

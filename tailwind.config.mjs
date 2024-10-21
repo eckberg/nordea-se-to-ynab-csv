@@ -20,6 +20,7 @@ export default {
       colors: {
         accent: colors.emerald,
         gray: colors.zinc,
+        nordea: "#00005e",
       },
     },
     fontFamily: {
