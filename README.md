@@ -1,47 +1,63 @@
-# Astro Starter Kit: Minimal
+# Nordea SE to YNAB CSV Converter
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This project provides a simple and efficient way to convert Nordea Sweden bank account statements into CSV format compatible with [YNAB (You Need a Budget)](https://ynab.com/). The service is accessible as a web application, making it easy to upload your statements and download a YNAB-friendly CSV.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+**Live version:** [nordea-se-ynab.pages.app](https://nordea-se-ynab.pages.app)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-## 🚀 Project Structure
+- **User-friendly Interface**: Easily upload your Nordea SE bank statements.
+- **Client-Side Processing**: All data processing happens locally on your browser for enhanced privacy.
+- **YNAB-Ready**: The output CSV is fully compatible with YNAB, helping you manage your budget seamlessly.
+- **Open-Source**: Contributions are welcome! Check out the repository on GitHub.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Getting Started
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. Visit the [live page](https://nordea-se-ynab.pages.app).
+2. Upload your Nordea bank statement.
+3. Download the converted CSV file.
+4. Import the CSV into your YNAB account.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Installation (For Development)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+If you'd like to run the project locally, follow these steps:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/nordea-se-to-ynab-csv.git
+    cd nordea-se-to-ynab-csv
+    ```
 
-## 🧞 Commands
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-All commands are run from the root of the project, from a terminal:
+3. Start the local development server:
+    ```bash
+    npm run dev
+    ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+4. Open your browser and navigate to `http://localhost:3000`.
 
-## 👀 Want to learn more?
+## Contributing
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+We welcome contributions to improve this tool! To get involved:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Open a pull request.
+
+Please ensure your changes follow the existing code style and are properly documented.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Feedback and Support
+
+If you encounter any issues or have suggestions for new features, feel free to [open an issue](https://github.com/yourusername/nordea-se-to-ynab-csv/issues) on GitHub.
+
+---
+
+Thanks for using and contributing to Nordea SE to YNAB CSV Converter!
