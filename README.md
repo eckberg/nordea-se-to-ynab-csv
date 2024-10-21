@@ -2,7 +2,7 @@
 
 This project provides a simple and efficient way to convert Nordea Sweden bank account statements into CSV format compatible with [YNAB (You Need a Budget)](https://ynab.com/). The service is accessible as a web application, making it easy to upload your statements and download a YNAB-friendly CSV.
 
-**Live version:** [nordea-se-ynab.pages.app](https://nordea-se-ynab.pages.app)
+**Live version:** [nordea-se-to-ynab-csv.pages.dev](https://nordea-se-to-ynab-csv.pages.dev/)
 
 ## Features
 
@@ -13,7 +13,7 @@ This project provides a simple and efficient way to convert Nordea Sweden bank a
 
 ## Getting Started
 
-1. Visit the [live page](https://nordea-se-ynab.pages.app).
+1. Visit the [live page](https://nordea-se-to-ynab-csv.pages.dev/).
 2. Upload your Nordea bank statement.
 3. Download the converted CSV file.
 4. Import the CSV into your YNAB account.

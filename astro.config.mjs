@@ -6,7 +6,7 @@ import { version } from "./package.json";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://dagvakt.se",
+  site: "https://nordea-se-to-ynab-csv.pages.dev/",
   integrations: [tailwind(), vue()],
   vite: {
     define: {
