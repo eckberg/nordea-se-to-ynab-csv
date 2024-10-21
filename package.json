@@ -1,5 +1,12 @@
 {
   "name": "nordea-se-to-ynab-csv",
+  "description": "A utility to convert Nordea SE transaction data into YNAB CSV format.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eckberg/nordea-se-to-ynab-csv.git"
+  },
+  "keywords": ["YNAB", "Nordea", "CSV", "converter"],
+  "license": "MIT",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
