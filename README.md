@@ -24,7 +24,7 @@ If you'd like to run the project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/nordea-se-to-ynab-csv.git
+    git clone https://github.com/eckberg/nordea-se-to-ynab-csv.git
     cd nordea-se-to-ynab-csv
     ```
 
@@ -38,7 +38,7 @@ If you'd like to run the project locally, follow these steps:
     npm run dev
     ```
 
-4. Open your browser and navigate to `http://localhost:3000`.
+4. Open your browser and navigate to `http://localhost:4321`.
 
 ## Contributing
 
@@ -56,7 +56,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Feedback and Support
 
-If you encounter any issues or have suggestions for new features, feel free to [open an issue](https://github.com/yourusername/nordea-se-to-ynab-csv/issues) on GitHub.
+If you encounter any issues or have suggestions for new features, feel free to [open an issue](https://github.com/eckberg/nordea-se-to-ynab-csv/issues) on GitHub.
 
 ---
 
