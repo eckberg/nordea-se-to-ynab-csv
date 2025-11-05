@@ -7,6 +7,7 @@ import { Temporal } from "@js-temporal/polyfill";
  * Type describing the rows retrived from a standard Nordea SE CSV Export.
  */
 type NordeaRow = {
+  "Datum för kontohändelse": string; // In credit card statements
   Bokföringsdag: string;
   Belopp: number;
   Avsändare: string;
@@ -144,12 +145,12 @@ function convert(file: File) {
 
       // Filter out rows without date (typically "Reserverat")
       parsedNordeaData.value.data = parsedNordeaData.value.data.filter((r) =>
-        r.Bokföringsdag.match(/\d{4}/)
+        (r.Bokföringsdag || r["Datum för kontohändelse"]).match(/\d{4}/)
       );
 
       // Transform Nordea format to YNAB format
       convertedYnabData.value = parsedNordeaData.value.data.map((r) => ({
-        Date: r.Bokföringsdag,
+        Date: r.Bokföringsdag || r["Datum för kontohändelse"],
         Payee: r.Rubrik.replace(memoExtract, "").trim(),
         Memo: r.Rubrik.match(memoExtract)?.[0] || "",
         Amount: r.Belopp,
