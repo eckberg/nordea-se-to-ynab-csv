@@ -21,12 +21,7 @@ type NordeaRow = {
 /**
  * Type describing the expected result from the conversion.
  */
-type YnabRow = {
-  Date: string;
-  Payee: string;
-  Memo: string;
-  Amount: number;
-};
+type YnabRow = { Date: string; Payee: string; Memo: string; Amount: number };
 
 /**
  * Regular expression used to match different transaction types in the "Rubrik" field from
@@ -144,8 +139,11 @@ function convert(file: File) {
       parsedNordeaData.value = result;
 
       // Filter out rows without date (typically "Reserverat")
-      parsedNordeaData.value.data = parsedNordeaData.value.data.filter((r) =>
-        (r.Bokföringsdag || r["Datum för kontohändelse"]).match(/\d{4}/)
+      // For Credit Cards, also filter out transactions not yet settled (title is only "KÖP")
+      parsedNordeaData.value.data = parsedNordeaData.value.data.filter(
+        (r) =>
+          (r.Bokföringsdag || r["Datum för kontohändelse"]).match(/\d{4}/) &&
+          r.Rubrik !== "KÖP"
       );
 
       // Transform Nordea format to YNAB format
@@ -216,7 +214,7 @@ function download() {
         <a href="https://www.nordea.se/" class="lnk">Nordea SE</a> to your
         device and upload it here.
       </p>
-      <div class="flex items-center space-x-2 overflow-scroll">
+      <div class="flex items-center space-x-2 overflow-auto">
         <i class="ph-fill ph-upload text-xl text-nordea" />
         <input type="file" accept=".csv" @change="handleFileUpload" />
       </div>
@@ -230,7 +228,7 @@ function download() {
       <p>Try again…</p>
     </div>
 
-    <div v-if="parsedNordeaData" class="space-y-2 overflow-scroll">
+    <div v-if="parsedNordeaData" class="space-y-2 overflow-auto">
       <h2>2. Review original</h2>
       <table>
         <thead>
@@ -263,7 +261,7 @@ function download() {
 
     <div
       v-if="convertedYnabData && convertedYnabData.length && !error"
-      class="space-y-2 overflow-scroll"
+      class="space-y-2 overflow-auto"
     >
       <h2>3. Review converted</h2>
       <table>
@@ -297,7 +295,7 @@ function download() {
 
     <div
       v-if="convertedYnabData && convertedYnabData.length && !error"
-      class="space-y-2 overflow-scroll"
+      class="space-y-2 overflow-auto"
     >
       <h2>4. Download!</h2>
       <div class="flex items-center space-x-5">
